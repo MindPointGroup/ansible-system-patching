@@ -45,6 +45,7 @@ supported_kernel_version: "3.2.0.70*"
 ### Contribution Instructions
  * Every YAML file must follow this format:
 
+```
 ---
    
 # Location <PATH TO FILE>
