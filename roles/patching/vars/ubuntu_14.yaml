@@ -1,0 +1,6 @@
+---
+supported_kernel_version: "3.13.0.39*"
+lock_packages: 
+  - { name: 'linux-virtual', version: '{{supported_kernel_version}}', priority: '1001' }
+  - { name: 'linux-image-virtual', version: '{{supported_kernel_version}}', priority: '1001' }
+  - { name: 'linux-headers-generic', version: '{{supported_kernel_version}}', priority: '1001' }

@@ -1,0 +1,6 @@
+---
+supported_kernel_version: "3.14.23-22.44.amzn1"
+lock_packages: 
+  - { name: 'kernel', version: '{{supported_kernel_version}}', epoch: '0' }
+  - { name: 'kernel-headers', version: '{{supported_kernel_version}}', epoch: '0' }
+  - { name: 'kernel-firmware', version: '{{supported_kernel_version}}', epoch: '0' }

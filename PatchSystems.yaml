@@ -1,0 +1,7 @@
+---
+- name: Patching All Linux Servers
+  hosts: "{{ hosts }}"
+  sudo: yes
+
+  roles: 
+      - patching

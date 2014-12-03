@@ -1,0 +1,16 @@
+---
+- name: Patching APT based packages
+  apt: upgrade=dist update_cache=yes
+  when: ansible_os_family == "Debian"
+  notify: restart system
+
+- name: Patching YUM based packages
+  yum: name=* state=latest
+  when: ansible_os_family == "RedHat"
+  notify: restart system
+
+#- name: Check if reboot is required
+#  stat: path=/var/run/reboot-required
+#  register: reboot_req
+#  changed_when: reboot_req.stat.exists
+#  notify: restart system

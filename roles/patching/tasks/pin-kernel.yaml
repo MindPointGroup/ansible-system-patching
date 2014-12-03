@@ -1,0 +1,22 @@
+---
+- name: Pin compatible kernel packages
+  template: >
+    src=managed-package-version-pin.j2
+    dest=/etc/apt/preferences.d/managed-package-version-pin
+    owner=root
+    group=root
+    mode=0644 
+  when: ansible_os_family == "Debian"
+
+- name: Install yum versionlock plugin
+  yum: name=yum-plugin-versionlock state=latest
+  when: ansible_os_family == "RedHat"
+
+- name: Pin compatible kernel packages
+  template: >
+    src=versionlock_list.j2
+    dest=/etc/yum/pluginconf.d/versionlock.list
+    owner=root
+    group=root
+    mode=0600
+  when: ansible_os_family == "RedHat"

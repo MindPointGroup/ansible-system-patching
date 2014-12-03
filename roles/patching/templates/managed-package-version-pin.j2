@@ -1,0 +1,10 @@
+##########################################################
+# This is an ANSIBLE managed file!!
+# Local edits will eventually be overwritten
+##########################################################
+{% for pkg in lock_packages %}
+Package: {{ pkg.name }}
+Pin: version {{ pkg.version }}
+Pin-Priority: {{ pkg.priority }}
+
+{% endfor %}
